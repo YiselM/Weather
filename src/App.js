@@ -1,6 +1,6 @@
-
 import React, { Component } from 'react';
 import Chart from './Area Chart';
+import './App.css';
 
 class App extends Component {
   render() {    
@@ -20,8 +20,8 @@ class App extends Component {
     </ul>
   </div>
 </nav>
-<div>
-<Chart/>
+<div className="Radiacion">
+  <Chart/>
 </div>
 </div>
 

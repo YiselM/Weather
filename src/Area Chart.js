@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import CanvasJSReact from './canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+var CanvasJS = CanvasJSReact.CanvasJS;
+
 
 var dataPoints =[];
+CanvasJS.addColorSet("Amarillito",
+[//colorSet Array
+"#FFDF00",              
+]);
+
 class Chart extends Component {
 	render() {
 		const options = {
@@ -10,6 +17,7 @@ class Chart extends Component {
 			//animationEnabled: true,
 			exportEnabled: true,
 			zoomEnabled: true,
+			colorSet: "Amarillito",
 			title: {
 				text: "Hora sol pico"
 			},
@@ -17,11 +25,15 @@ class Chart extends Component {
 				title: "Radiación Solar (watts/m²)",
 				includeZero: false,
 			},
-			
+			axisX: {
+				title: "Hora"
+			},
+				
 			data: [{
 				type: "line",
 				 //xValueFormatString: "MMM YYYY",
 				// yValueFormatString: "$#,##0.00",
+				toolTipContent: "{x}: {y}",
 				dataPoints: dataPoints
 			}]
 		}
@@ -36,7 +48,6 @@ class Chart extends Component {
 		);
 	}
 
-	//Aquí debería ir lo que no me funciona, que es obtener el json con React
 	componentDidMount() {
 		
 		var chart = this.chart;
