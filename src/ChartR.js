@@ -5,12 +5,13 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 
 
 var dataPoints =[];
+var newDataPoints =[];
 CanvasJS.addColorSet("Amarillito",
 [//colorSet Array
 "#FFDF00",              
 ]);
 
-class Chart extends Component {
+class ChartR extends Component {
 	render() {
 		const options = {
 			theme: "light2",
@@ -46,19 +47,18 @@ class Chart extends Component {
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
 		);
+		
 	}
 
 	componentDidMount() {
 		
 		var chart = this.chart;
-		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
-		
+		var updateChart = function () {
+		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IPUERTOC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
 		.then(function(response) {
 			return response.json();
-			
 		})
 		.then(function(data) {
-			
 			for (var i = 0; i < data.observations.length; i++) {
 				dataPoints.push({
 					x: new Date(data.observations[i].obsTimeLocal),  
@@ -67,17 +67,39 @@ class Chart extends Component {
 			}
 			//console.log(dataPoints);
 			chart.render();
+			chart.options.data[0].dataPoints = dataPoints;
+			dataPoints = [];
 		});
-	
-
+		//dataPoints.shift();
+	};
+	setInterval(function(){updateChart()}, 1000);
 		// .then(function(myJson) {
 		// 	console.log(myJson);
-		//   });	
-		//setInterval(this.chart.render(), 1000);
-		//setInterval(function(){ alert("Hello"); }, 3000);
+		//   });
+
+		//chart.options.data[0].dataPoints = newDataPoints;
+
+
+		// var updateChart = function () {
+		// fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IPUERTOC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+		// .then(function(response) {
+		// 	return response.json();
+		// })
+		// .then(function(data) {
+		// 	for (var i = 0; i < data.observations.length; i++) {
+		// 		newDataPoints.push({
+		// 			x: new Date(data.observations[i].obsTimeLocal),  
+		// 			y: data.observations[i].solarRadiationHigh
+		// 		});
+		// 	}
+		// });
+		// //console.log(dataPoints);
+		// //chart.render();
+		// chart.options.data[0].dataPoints = newDataPoints;
+		// newDataPoints = [];
+		// };
+		
+		// setInterval(function(){updateChart()}, 1000);
 	}
-
-
 }
-
-export default Chart;                           
+export default ChartR;                           

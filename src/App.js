@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Chart from './Area Chart';
+import ChartR from './ChartR';
+import ChartV from './ChartV';
 import './App.css';
 
 class App extends Component {
@@ -14,15 +15,19 @@ class App extends Component {
   <div className="collapse navbar-collapse" id="navbarNavDropdown">
     <ul className="navbar-nav">
       <li className="nav-item active">
-        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+        <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
       </li>
       
     </ul>
   </div>
 </nav>
 <div className="Radiacion">
-  <Chart/>
+  <ChartR/>
 </div>
+<div className="Otra">
+  <ChartV/>
+</div>
+
 </div>
 
 
