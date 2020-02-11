@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChartR from './ChartR';
 import ChartV from './ChartV';
+import HPS from './HPS';
 import './App.css';
 
 class App extends Component {
@@ -24,9 +25,13 @@ class App extends Component {
 <div className="Radiacion">
   <ChartR/>
 </div>
-<div className="Otra">
+{/* <div className="Otra">
   <ChartV/>
+</div> */}
+<div>
+  <HPS/>
 </div>
+
 
 </div>
 

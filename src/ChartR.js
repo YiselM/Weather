@@ -5,7 +5,6 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 
 
 var dataPoints =[];
-var newDataPoints =[];
 CanvasJS.addColorSet("Amarillito",
 [//colorSet Array
 "#FFDF00",              
