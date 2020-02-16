@@ -15,23 +15,23 @@ class ChartV extends Component {
 	render() {
 		const options = {
 			theme: "light2",
-			//animationEnabled: true,
+			animationEnabled: true,
 			exportEnabled: true,
 			zoomEnabled: true,
 			colorSet: "Azulito",
 			title: {
-				text: "Perfil de viento"
+				text: "Velocidad promedio"
 			},
 			axisY: {
-				title: "Speed",
+				title: "Velocidad promedio",
 				includeZero: false,
 			},
 			axisX: {
-				title: "Time"
+				title: "Hora"
 			},
 				
 			data: [{
-				type: "line",
+				type: "stepLine",
 				 //xValueFormatString: "MMM YYYY",
 				// yValueFormatString: "$#,##0.00",
 				toolTipContent: "{x}: {y}",

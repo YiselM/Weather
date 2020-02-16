@@ -50,7 +50,7 @@ componentDidMount() {
             //console.log(m)
         }
         for (var u = 0; u < m.length; u++){
-            HSP = HSP + m[u]*Data[u + 1].y;
+            HSP = HSP + (m[u]*Data[u + 1].z)/60;
         }
         document.getElementById("demo").innerHTML = HSP+" w/m²";
         console.log(HSP)

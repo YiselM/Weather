@@ -33,5 +33,14 @@
   /*indicamos que el margen superior, es la mitad de la altura*/
   margin-top:-185px;
   padding:5px;
+}
 
+/*.HSPP {
+	position: relative;
+	padding: 0;
+}*/
+.HSPH { 
+  position: relative;
+	left: 81%;
+	top: 10px;
 }

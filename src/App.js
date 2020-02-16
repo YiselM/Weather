@@ -25,11 +25,14 @@ class App extends Component {
 <div className="Radiacion">
   <ChartR/>
 </div>
-{/* <div className="Otra">
+<div className="Otra">
   <ChartV/>
-</div> */}
-<div>
+</div>
+
+<div className="HSPP">
+<div className="HSPH">
   <HPS/>
+</div>
 </div>
 
 

@@ -14,12 +14,12 @@ class ChartR extends Component {
 	render() {
 		const options = {
 			theme: "light2",
-			//animationEnabled: true,
+			animationEnabled: true,
 			exportEnabled: true,
 			zoomEnabled: true,
 			colorSet: "Amarillito",
 			title: {
-				text: "Hora sol pico"
+				text: "Radiación"
 			},
 			axisY: {
 				title: "Radiación Solar (watts/m²)",
