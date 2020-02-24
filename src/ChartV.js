@@ -20,10 +20,10 @@ class ChartV extends Component {
 			zoomEnabled: true,
 			colorSet: "Azulito",
 			title: {
-				text: "Velocidad promedio"
+				text: "Velocidad del viento"
 			},
 			axisY: {
-				title: "Velocidad promedio (km/h)",
+				title: "Velocidad promedio (m/s)",
 				includeZero: false,
 			},
 			axisX: {
@@ -58,10 +58,12 @@ class ChartV extends Component {
 			return response.json();	
 		})
 		.then(function(data) {
+			var v = 0;
 			for (var i = 0; i < data.observations.length; i++) {
+				v = (data.observations[i].imperial.windspeedAvg)*(1000/3600)
 				dataPoints.push({
                     x: new Date(data.observations[i].obsTimeLocal),//TIME
-                    y: data.observations[i].imperial.windspeedAvg//SPEED
+                    y: Number(v.toFixed(3)) //SPEED
                     
 				});
 			}

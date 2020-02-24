@@ -22,7 +22,7 @@ class ChartR extends Component {
 				text: "Radiación"
 			},
 			axisY: {
-				title: "Radiación Solar (watts/m²)",
+				title: "Radiación Solar (W/m²)",
 				includeZero: false,
 			},
 			axisX: {
