@@ -17,7 +17,7 @@
   padding:5px;
 
 }
-.Otra {
+.Viento {
   position: absolute;
   margin: 0 auto;
   display: block;
@@ -35,12 +35,26 @@
   padding:5px;
 }
 
-/*.HSPP {
-	position: relative;
-	padding: 0;
-}*/
 .HSPH { 
   position: relative;
 	left: 81%;
 	top: 10px;
+}
+
+.HSPsemanal {
+  position: absolute;
+  margin: 0 auto;
+  display: block;
+  /*nos posicionamos en el centro del navegador*/
+  top:120%;
+  left:50%;
+  /*determinamos una anchura*/
+  width:500px;
+  /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+  margin-left:-500px;
+  /*determinamos una altura*/
+  height:500px;
+  /*indicamos que el margen superior, es la mitad de la altura*/
+  margin-top:-185px;
+  padding:5px;
 }

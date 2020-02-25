@@ -50,11 +50,11 @@ componentDidMount() {
             //console.log(m)
         }
         for (var u = 0; u < m.length; u++){
-            HSP = (HSP + (m[u]*Data[u + 1].z)/60)/1000;
+            HSP = (HSP + (m[u]*Data[u + 1].z)/60);
             HSP = Number(HSP.toFixed(3));
         }
-        document.getElementById("demo").innerHTML = HSP+" Wh/m²";
-        console.log(HSP)
+        document.getElementById("demo").innerHTML = HSP/1000+" Wh/m²";
+        //console.log(HSP)
         Data = [];
         HSP = 0;
     });

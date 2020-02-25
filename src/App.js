@@ -3,6 +3,7 @@ import ChartR from './ChartR';
 import ChartV from './ChartV';
 import HPS from './HPS';
 import './App.css';
+import HSPsemanal from './HSPsemanal';
 
 class App extends Component {
   render() {    
@@ -25,8 +26,11 @@ class App extends Component {
 <div className="Radiacion">
   <ChartR/>
 </div>
-<div className="Otra">
+<div className="Viento">
   <ChartV/>
+</div>
+<div className="HSPsemanal">
+  <HSPsemanal/>
 </div>
 
 <div className="HSPP">
