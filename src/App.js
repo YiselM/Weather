@@ -6,6 +6,7 @@ import './App.css';
 import HSPsemanal from './HSPsemanal';
 
 class App extends Component {
+
   render() {    
     return (
 <div className="principal">
@@ -38,7 +39,6 @@ class App extends Component {
   <HPS/>
 </div>
 </div>
-
 
 </div>
 

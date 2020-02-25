@@ -129,9 +129,9 @@ class HSPsemanal extends Component {
                     y: hspsemanal[j]
                 });   
             }
-            console.log(L)
-            console.log(hspsemanal)
-            console.log(semana)
+            //console.log(L)
+            //console.log(hspsemanal)
+            //console.log(semana)
             //console.log(dataPoints);
             //console.log(semana.length)
 			chart.render();
