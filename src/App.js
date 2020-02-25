@@ -8,7 +8,7 @@ import HSPsemanal from './HSPsemanal';
 class App extends Component {
   render() {    
     return (
-<div>
+<div className="principal">
 <nav className="navbar navbar-dark bg-dark">
   <a className="navbar-brand" href="#">Weather 611 🌤 </a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

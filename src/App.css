@@ -1,4 +1,7 @@
 
+.principal {
+  width: 100%;
+}
 .Radiacion {
   position: absolute;
   margin: 0 auto;
@@ -14,7 +17,7 @@
   height:500px;
   /*indicamos que el margen superior, es la mitad de la altura*/
   margin-top:-185px;
-  padding:5px;
+ 
 
 }
 .Viento {
@@ -32,14 +35,16 @@
   height:500px;
   /*indicamos que el margen superior, es la mitad de la altura*/
   margin-top:-185px;
-  padding:5px;
+  
 }
 
 .HSPH { 
-  position: relative;
-	left: 81%;
-	top: 10px;
-}
+  position: absolute;
+  margin: 0 auto;
+  display: block;
+	left: 80%;
+	top: 10%;
+} 
 
 .HSPsemanal {
   position: absolute;
@@ -56,5 +61,4 @@
   height:500px;
   /*indicamos que el margen superior, es la mitad de la altura*/
   margin-top:-185px;
-  padding:5px;
 }
