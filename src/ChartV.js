@@ -71,28 +71,13 @@ class ChartV extends Component {
 			chart.render();
 			chart.options.data[0].dataPoints = dataPoints;
 			dataPoints = [];
-		});
+		})
+		.catch(function(error) {
+			
+		  });
 	};
-	setInterval(function(){updateChart()}, 1000);
-
-		// var updateChart = function () {
-		// fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IPUERTOC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
-		// .then(function(response) {
-		// 	return response.json();
-		// })
-		// .then(function(data) {
-		// 	for (var i = 0; i < data.observations.length; i++) {
-		// 		newDataPoints.push({
-		// 			x: new Date(data.observations[i].obsTimeLocal),//TIME
-		// 			y: data.observations[i].imperial.windspeedAvg//SPEED
-		// 		});
-		// 	}
-		// });
-		// //console.log("Hola");
-		// chart.options.data[0].dataPoints = newDataPoints;
-		// newDataPoints = [];
-		// };
-		// setInterval(function(){updateChart()}, 1000);
+	setTimeout(function(){updateChart()}, 1000);
+	setInterval(function(){updateChart()}, 900000);
 	
 	}
 

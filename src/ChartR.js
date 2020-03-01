@@ -53,7 +53,7 @@ class ChartR extends Component {
 		
 		var chart = this.chart;
 		var updateChart = function () {
-		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IPUERTOC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
 		.then(function(response) {
 			return response.json();
 		})
@@ -68,37 +68,17 @@ class ChartR extends Component {
 			chart.render();
 			chart.options.data[0].dataPoints = dataPoints;
 			dataPoints = [];
-		});
+		})
+		.catch(function(error) {
+			
+		  });
+		
+		
 		//dataPoints.shift();
 	};
-	setInterval(function(){updateChart()}, 1000);
-		// .then(function(myJson) {
-		// 	console.log(myJson);
-		//   });
-
-		//chart.options.data[0].dataPoints = newDataPoints;
-
-
-		// var updateChart = function () {
-		// fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IPUERTOC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
-		// .then(function(response) {
-		// 	return response.json();
-		// })
-		// .then(function(data) {
-		// 	for (var i = 0; i < data.observations.length; i++) {
-		// 		newDataPoints.push({
-		// 			x: new Date(data.observations[i].obsTimeLocal),  
-		// 			y: data.observations[i].solarRadiationHigh
-		// 		});
-		// 	}
-		// });
-		// //console.log(dataPoints);
-		// //chart.render();
-		// chart.options.data[0].dataPoints = newDataPoints;
-		// newDataPoints = [];
-		// };
-		
-		// setInterval(function(){updateChart()}, 1000);
+	
+	setTimeout(function(){updateChart()}, 1000);
+	setInterval(function(){updateChart()}, 900000);
 	}
 }
 export default ChartR;                           

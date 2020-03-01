@@ -14,7 +14,7 @@ class HPS extends Component {
 }
 componentDidMount() {
     var updateData = function () {
-    fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IPUERTOC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+    fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
     .then(function(response) {
         return response.json();
     })
@@ -44,7 +44,6 @@ componentDidMount() {
                     h = h - Data[j].x;
                     temp = temp - Data[j].y;
                     m[j] = h*60 + temp;
-
                 }
             }
             //console.log(m)
@@ -53,13 +52,17 @@ componentDidMount() {
             HSP = (HSP + (m[u]*Data[u + 1].z)/60);
             HSP = Number(HSP.toFixed(3));
         }
-        document.getElementById("demo").innerHTML = HSP/1000+" Wh/m²";
+        HSP = HSP/1000;
+        document.getElementById("demo").innerHTML = HSP+" Wh/m²";
         //console.log(HSP)
         Data = [];
         HSP = 0;
-    });
+    })
+    .catch(function(error) {
+        
+      });
 };
-setInterval(function(){updateData()}, 1000);  
-}
-}
+setTimeout(function(){updateData()}, 1000);  
+setInterval(function(){updateData()}, 900000);
+}}
 export default HPS;

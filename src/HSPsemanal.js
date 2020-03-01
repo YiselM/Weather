@@ -47,7 +47,7 @@ class HSPsemanal extends Component {
 
 		var chart = this.chart;
 		var updateChart = function () {
-		fetch('https://api.weather.com/v2/pws/observations/hourly/7day?stationId=IPUERTOC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+		fetch('https://api.weather.com/v2/pws/observations/hourly/7day?stationId=IATLNTIC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
 		.then(function(response) {
 			return response.json();
 		})
@@ -138,10 +138,14 @@ class HSPsemanal extends Component {
 			chart.options.data[0].dataPoints = dataPoints;
             dataPoints = [];
             
-		});
+        })
+        .catch(function(error) {
+			
+		  });
 		//dataPoints.shift();
 	};
-	setInterval(function(){updateChart()}, 1000);
+    setTimeout(function(){updateChart()}, 1000);
+    setInterval(function(){updateChart()}, 900000);
 	
 	}
 }
