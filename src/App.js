@@ -7,7 +7,6 @@ import HSPsemanal from './HSPsemanal';
 import ChartVX from './ChartVX';
 
 class App extends Component {
-
   render() {    
     return (
 <div className="principal">
@@ -34,18 +33,11 @@ class App extends Component {
 <div className="VX">
   <ChartVX/>
 </div>
-
-
 <div className="HSPH">
   <HPS/>
 </div>
-
-
 </div>
-
-
     );
   }
 }
-
 export default App;
