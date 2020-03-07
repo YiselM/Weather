@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CanvasJSReact from './canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-var CanvasJS = CanvasJSReact.CanvasJS;
 
 var dataPoints = [];
 class ChartVX extends Component {

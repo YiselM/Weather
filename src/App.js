@@ -12,7 +12,7 @@ class App extends Component {
     return (
 <div className="principal">
 <nav className="navbar navbar-dark bg-dark">
-  <a className="navbar-brand" href="#">Weather 🌤 </a>
+  <a className="navbar-brand" href="index.html">Weather 🌤 </a>
   <div className="collapse navbar-collapse" id="navbarNavDropdown">
     <ul className="navbar-nav">
       <li className="nav-item active">
