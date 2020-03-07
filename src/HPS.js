@@ -29,9 +29,7 @@ componentDidMount() {
                 y: n.getMinutes(), 
                 z: data.observations[i].solarRadiationHigh
             });
-            //console.log(Data)
         }
-        //console.log(Data.length);
         if(Data.length > 1){
             var m = []; //minutos
             var h = 0;
@@ -48,25 +46,21 @@ componentDidMount() {
                     m[j] = h*60 + temp;
                 }
             }
-            //console.log(m)
         }
         for (var u = 0; u < m.length; u++){
             HSP = (HSP + (m[u]*Data[u + 1].z)/60);
             HSP = Number(HSP.toFixed(3));
         }
         HSP = HSP/1000;
+        HSP = Number(HSP.toFixed(3))
         //poner un vector para almacenar las horas sol pico de cada día
         var hoy = new Date();
         hoy = hoy.getDay()
         HSPS[hoy] = HSP;
-        //console.log(HSPS.length)
-        //HSPS[0] = 0;
         localStorage.setItem('HSPS', JSON.stringify(HSPS));
-
         document.getElementById("demo").innerHTML = HSP+" Wh/m²";
         Data = [];
         HSP = 0;
-        //HSPS = [];
     })
     .catch(function(error) {
         
