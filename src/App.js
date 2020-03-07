@@ -24,18 +24,18 @@ class App extends Component {
 <div className="Radiacion">
   <ChartR/>
 </div>
-<div className="Viento">
+<div className="Radiacion2">
   <ChartV/>
 </div>
-<div className="HSPsemanal">
+<div className="Radiacion">
   <HSPsemanal/>
 </div>
-<div className="VX">
+<div className="Radiacion2">
   <ChartVX/>
 </div>
 <div className="HSPH">
   <HPS/>
-</div>
+</div> 
 </div>
     );
   }
