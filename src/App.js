@@ -4,6 +4,7 @@ import ChartV from './ChartV';
 import HPS from './HPS';
 import './App.css';
 import HSPsemanal from './HSPsemanal';
+import ChartVX from './ChartVX';
 
 class App extends Component {
 
@@ -33,12 +34,15 @@ class App extends Component {
 <div className="HSPsemanal">
   <HSPsemanal/>
 </div>
+<div className="VX">
+  <ChartVX/>
+</div>
 
-<div className="HSPP">
+
 <div className="HSPH">
   <HPS/>
 </div>
-</div>
+
 
 </div>
 

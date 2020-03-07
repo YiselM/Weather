@@ -3,7 +3,6 @@ import CanvasJSReact from './canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 var CanvasJS = CanvasJSReact.CanvasJS;
 
-
 var dataPoints =[];
 CanvasJS.addColorSet("Amarillito",
 [//colorSet Array
@@ -44,16 +43,16 @@ class ChartR extends Component {
 				 onRef={ref => this.chart = ref}
 			/>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>
-		);
-		
-	}
+			</div>
+			
+			);
+		}
 
 	componentDidMount() {
 		
 		var chart = this.chart;
 		var updateChart = function () {
-		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=m&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
 		.then(function(response) {
 			return response.json();
 		})

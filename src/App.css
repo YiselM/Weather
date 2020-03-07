@@ -37,6 +37,23 @@
   margin-top:-185px;
   
 }
+.VX {
+  position: absolute;
+  margin: 0 auto;
+  display: block;
+  /*nos posicionamos en el centro del navegador*/
+  top:120%;
+  left:50%;
+  /*determinamos una anchura*/
+  width:500px;
+  /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+  margin-left:-10px;
+  /*determinamos una altura*/
+  height:500px;
+  /*indicamos que el margen superior, es la mitad de la altura*/
+  margin-top:-185px;
+  
+}
 
 .HSPH { 
   position: absolute;

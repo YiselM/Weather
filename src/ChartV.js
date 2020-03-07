@@ -53,14 +53,14 @@ class ChartV extends Component {
 		
 		var chart = this.chart;
 		var updateChart = function () {
-		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=m&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
 		.then(function(response) {
 			return response.json();	
 		})
 		.then(function(data) {
 			var v = 0;
 			for (var i = 0; i < data.observations.length; i++) {
-				v = (data.observations[i].imperial.windspeedAvg)*(1000/3600)
+				v = (data.observations[i].metric.windspeedAvg)*(1000/3600)
 				dataPoints.push({
                     x: new Date(data.observations[i].obsTimeLocal),//TIME
                     y: Number(v.toFixed(3)) //SPEED

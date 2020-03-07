@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+
+
 var Data = [];
 var HSP = 0;
+var HSPS = [];
 class HPS extends Component {
   render() {    
     return (
@@ -14,7 +16,7 @@ class HPS extends Component {
 }
 componentDidMount() {
     var updateData = function () {
-    fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=e&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+    fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=m&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
     .then(function(response) {
         return response.json();
     })
@@ -53,10 +55,18 @@ componentDidMount() {
             HSP = Number(HSP.toFixed(3));
         }
         HSP = HSP/1000;
+        //poner un vector para almacenar las horas sol pico de cada día
+        var hoy = new Date();
+        hoy = hoy.getDay()
+        HSPS[hoy] = HSP;
+        //console.log(HSPS.length)
+        //HSPS[0] = 0;
+        localStorage.setItem('HSPS', JSON.stringify(HSPS));
+
         document.getElementById("demo").innerHTML = HSP+" Wh/m²";
-        //console.log(HSP)
         Data = [];
         HSP = 0;
+        //HSPS = [];
     })
     .catch(function(error) {
         
