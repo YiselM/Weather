@@ -8,7 +8,7 @@ class HPS extends Component {
   render() {    
     return (
     <div>        
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-warning">
          Horas sol pico <span className="badge badge-light" id = "demo"></span >
         </button>
     </div>

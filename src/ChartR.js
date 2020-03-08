@@ -32,7 +32,7 @@ class ChartR extends Component {
 				type: "line",
 				 //xValueFormatString: "MMM YYYY",
 				// yValueFormatString: "$#,##0.00",
-				toolTipContent: "{x}: {y}",
+				toolTipContent: "Radiación: {y}",
 				dataPoints: dataPoints
 			}]
 		}

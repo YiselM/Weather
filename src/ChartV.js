@@ -29,7 +29,7 @@ class ChartV extends Component {
 			},
 			data: [{
 				type: "stepLine",
-				toolTipContent: "{x}: {y}",
+				toolTipContent: "Velocidad: {y}",
 				dataPoints: dataPoints
 			}]
 		}
