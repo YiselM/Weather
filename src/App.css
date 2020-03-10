@@ -1,45 +1,21 @@
-
- /*.principal {
+/*.principal {
   width: 100%;
 } */
-.Radiacion {
-  position: relative;
-  margin: 0 auto;
-  display: block;
-  /*nos posicionamos en el centro del navegador*/
-  top:50%;
-  left:50%; 
-  /*determinamos una anchura*/
-  width:40%;
-  /*indicamos que el margen izquierdo, es la mitad de la anchura*/
-  margin-left:-42%;
-  /*determinamos una altura*/
-  height:40%;
-  /*indicamos que el margen superior, es la mitad de la altura*/
-  margin-top:5%;
+.Cuadro {
+  margin: 4%;
+  display: inline-block;
+  height: 30%;
+  width: 40%;
 }
-.Radiacion2 {
-  position: relative;
+
+.Centrado {
   margin: 0 auto;
-  display: block;
-  /*nos posicionamos en el centro del navegador*/
-  top:50%;
-  left:50%;
-  /*determinamos una anchura*/
-  /*width:500px;*/
-  width:40%;
-  /*indicamos que el margen izquierdo, es la mitad de la anchura*/
-  margin-left:2%;
-  /*determinamos una altura*/
-  height:40%;
-  /*indicamos que el margen superior, es la mitad de la altura*/
-  margin-top:-23%;
-  
 }
-.HSPH { 
-  position: absolute;
-  margin: 0 auto;
-  display: block; 
-	left: 80%;
+
+.HSPH {
+  width: 13%;
+  position: relative;
+  display: block;
+  left: 80%;
   top: 10%;
-} 
+}

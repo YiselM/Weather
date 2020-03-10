@@ -11,7 +11,7 @@ class HSPsemanal extends Component {
 			exportEnabled: true,
 			zoomEnabled: true,
 			title: {
-				text: "Hora solar pico semanal"
+				text: "Energía Estimada Panel Bloque C"
 			},
 			axisY: {
 				title: "Wh/m²",
@@ -47,6 +47,7 @@ class HSPsemanal extends Component {
             return localStorage.getItem('HSPS');
         })
 		.then(function(data) {
+			
             var hoy = new Date();
             hoy = hoy.getDay()
             data = JSON.parse(data)

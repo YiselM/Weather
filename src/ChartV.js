@@ -18,10 +18,10 @@ class ChartV extends Component {
 			zoomEnabled: true,
 			colorSet: "Azulito",
 			title: {
-				text: "Velocidad del viento"
+				text: "Velocidad del Viento"
 			},
 			axisY: {
-				title: "Velocidad promedio (m/s)",
+				title: "Velocidad (m/s)",
 				includeZero: false,
 			},
 			axisX: {
@@ -69,6 +69,7 @@ class ChartV extends Component {
                     
 				});
 			}
+			power = power/10
 			power = Number(power.toFixed(3))
 			//console.log(power)
 			PV[hoy] = power;

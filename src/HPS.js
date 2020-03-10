@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 var Data = [];
 var HSP = 0;
 var HSPS = [];
+var wind = [];
 class HPS extends Component {
   render() {    
     return (
@@ -11,6 +12,25 @@ class HPS extends Component {
         <button type="button" className="btn btn-warning">
          Horas sol pico <span className="badge badge-light" id = "demo"></span >
         </button>
+        
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                <th scope="col">Total Energía</th>
+                <td id = "total"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">Solar</th>
+                <td id = "solar"></td>
+                </tr>
+                <tr>
+                <th scope="row">Eólico</th>
+                <td id = "eolico"></td>
+                </tr>
+            </tbody>
+            </table>
     </div>
     );
 }
@@ -49,16 +69,32 @@ componentDidMount() {
         }
         for (var u = 0; u < m.length; u++){
             HSP = (HSP + (m[u]*Data[u + 1].z)/60);
-            HSP = Number(HSP.toFixed(3));
         }
         HSP = HSP/1000;
-        HSP = Number(HSP.toFixed(3))
+        HSP = Number(HSP.toFixed(3));
         //poner un vector para almacenar las horas sol pico de cada día
+        var viento = localStorage.getItem('PV');
+        viento = JSON.parse(viento)
         var hoy = new Date();
         hoy = hoy.getDay()
-        HSPS[hoy] = HSP;
+        wind = viento[hoy]
+        //console.log(wind)
+
+        var areapanel = 1.572;
+        var eficiencia = 0.11;
+        var EBC = HSP*areapanel*eficiencia*1000;
+        EBC = Number(EBC.toFixed(3));
+        //console.log(EBC)
+        HSPS[hoy] = EBC;
+        var total = wind + EBC;
+        var solar = (EBC/total)*100
+        var eolico = (wind/total)*100
+        //Cambiar esto por node
         localStorage.setItem('HSPS', JSON.stringify(HSPS));
-        document.getElementById("demo").innerHTML = HSP+" Wh/m²";
+        document.getElementById("demo").innerHTML = HSP+" kWh/m²";
+        document.getElementById("total").innerHTML = total +" Wh/d";
+        document.getElementById("solar").innerHTML = solar +"%";
+        document.getElementById("eolico").innerHTML = eolico +"%";
         Data = [];
         HSP = 0;
     })

@@ -11,10 +11,10 @@ class ChartVX extends Component {
             exportEnabled: true,
             zoomEnabled: true,
             title: {
-                text: "Densidad de viento"
+                text: "Energía Estimada Emulador UniGRID"
             },
             axisY: {
-                title: "W",
+                title: "Wh",
                 includeZero: false,
             },
             axisX: {
