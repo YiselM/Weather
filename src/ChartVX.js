@@ -8,10 +8,10 @@ class ChartVX extends Component {
         const options = {
             theme: "light2",
             animationEnabled: true,
-            exportEnabled: true,
+            //exportEnabled: true,
             zoomEnabled: true,
             title: {
-                text: "Energía Estimada Emulador UniGRID"
+                text: "Energía Estimada Emulador WT UniGRID"
             },
             axisY: {
                 title: "Wh",

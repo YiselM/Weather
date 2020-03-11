@@ -3,17 +3,18 @@ import React, { Component } from 'react';
 
 var Data = [];
 var HSP = 0;
-var HSPS = [];
 var wind = [];
 class HPS extends Component {
   render() {    
     return (
-    <div>        
+        
+    <div>  
+     <p className="App-intro">{this.state.apiResponse}</p>       
         <button type="button" className="btn btn-warning">
          Horas sol pico <span className="badge badge-light" id = "demo"></span >
         </button>
         
-        <table class="table table-sm">
+        <table className="table table-sm">
             <thead>
                 <tr>
                 <th scope="col">Total Energía</th>
@@ -34,7 +35,19 @@ class HPS extends Component {
     </div>
     );
 }
+ constructor(props) {
+    super(props);
+    this.state = { apiResponse: "" };
+}
+
+callAPI() {
+    fetch("http://localhost:9000/testAPI")
+        .then(res => res.text())
+        .then(res => this.setState({ apiResponse: res }));
+}
+
 componentDidMount() {
+    this.callAPI();
     var updateData = function () {
     fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=m&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
     .then(function(response) {
@@ -77,20 +90,18 @@ componentDidMount() {
         viento = JSON.parse(viento)
         var hoy = new Date();
         hoy = hoy.getDay()
+        //console.log(hoy)
         wind = viento[hoy]
-        //console.log(wind)
-
         var areapanel = 1.572;
         var eficiencia = 0.11;
         var EBC = HSP*areapanel*eficiencia*1000;
         EBC = Number(EBC.toFixed(3));
-        //console.log(EBC)
-        HSPS[hoy] = EBC;
         var total = wind + EBC;
         var solar = (EBC/total)*100
         var eolico = (wind/total)*100
-        //Cambiar esto por node
-        localStorage.setItem('HSPS', JSON.stringify(HSPS));
+        total = Number(total.toFixed(3));
+        solar = Number(solar.toFixed(3));
+        eolico = Number(eolico.toFixed(3));
         document.getElementById("demo").innerHTML = HSP+" kWh/m²";
         document.getElementById("total").innerHTML = total +" Wh/d";
         document.getElementById("solar").innerHTML = solar +"%";

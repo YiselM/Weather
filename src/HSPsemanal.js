@@ -14,7 +14,7 @@ class HSPsemanal extends Component {
 				text: "Energía Estimada Panel Bloque C"
 			},
 			axisY: {
-				title: "Wh/m²",
+				title: "kWh/m²",
 				includeZero: false,
 			},
 			axisX: {
@@ -50,8 +50,8 @@ class HSPsemanal extends Component {
 			
             var hoy = new Date();
             hoy = hoy.getDay()
-            data = JSON.parse(data)
-            //console.log(data);
+			data = JSON.parse(data)
+            //console.log("Horas sol pico "+data);
             var dias=['D', 'L', 'M', 'Mier', 'J', 'V', 'S'];
             for(var i = 0; i<= hoy; i++){
                 dataPoints.push({

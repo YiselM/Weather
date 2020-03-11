@@ -73,8 +73,11 @@ class ChartV extends Component {
 			power = Number(power.toFixed(3))
 			//console.log(power)
 			PV[hoy] = power;
+			//Cambiar esto por node
 			localStorage.setItem('PV', JSON.stringify(PV));
 	
+
+			
 			chart.render();
 			chart.options.data[0].dataPoints = dataPoints;
 			dataPoints = [];
