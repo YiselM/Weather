@@ -9,18 +9,14 @@
 .Centrado {
   margin: 0 auto;
 }
-
+  
 .HSPH {
-  width: 13%;
+  width: 14%;
   position: relative;
+  /*float: left;*/
   display: block;
   left: 30%;
   top: 10%;
 }
-.Table {
-  width: 15%;
-  position: relative;
-  display: block;
-  left: 60%;
-  top: 10%;
-}
+
+

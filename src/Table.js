@@ -3,7 +3,7 @@ class Table extends Component {
     render() {    
       return (
       <div>        
-         <table className="table table-sm">
+         <table className="table table-sm" >
   <thead>
     <tr className="bg-warning">
       <th scope="col">Panel Solar</th>

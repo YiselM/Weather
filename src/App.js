@@ -23,9 +23,9 @@ class App extends Component {
           </div>
         </nav>
         <div className="Centrado">
-          <div className="Table">
-          <Table />
-          </div>
+            <div className="HSPH">
+            <Table />
+            </div>
           <div className="HSPH">
             <HPS />
           </div>

@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 var Data = [];
 var HSP = 0;
 var wind = [];
+var HSPS = [];
 class HPS extends Component {
   render() {    
     return (
@@ -14,7 +15,7 @@ class HPS extends Component {
          Horas sol pico <span className="badge badge-light" id = "demo"></span >
         </button>
         
-        <table className="table table-sm">
+        <table className="table table-sm" >
             <thead>
                 <tr>
                 <th scope="col">Total Energía</th>
@@ -90,6 +91,8 @@ componentDidMount() {
         viento = JSON.parse(viento)
         var hoy = new Date();
         hoy = hoy.getDay()
+        HSPS[hoy] = HSP;
+        localStorage.setItem('HSPS', JSON.stringify(HSPS));
         //console.log(hoy)
         wind = viento[hoy]
         var areapanel = 1.572;
