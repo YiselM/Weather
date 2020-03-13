@@ -6,7 +6,7 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 var dataPoints =[];
 CanvasJS.addColorSet("Amarillito",
 [//colorSet Array
-"#FFDF00",              
+"#FFB300",              
 ]);
 
 class ChartR extends Component {
@@ -29,7 +29,7 @@ class ChartR extends Component {
 			},
 				
 			data: [{
-				type: "line",
+				type: "area",
 				 //xValueFormatString: "MMM YYYY",
 				// yValueFormatString: "$#,##0.00",
 				toolTipContent: "Radiación: {y}",

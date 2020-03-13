@@ -6,7 +6,7 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 var dataPoints =[];
 CanvasJS.addColorSet("Azulito",
 [//colorSet Array
-"#84BEFF",              
+"#3F5CFF",              
 ]);
 
 class ChartV extends Component {
