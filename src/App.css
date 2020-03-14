@@ -10,13 +10,21 @@
   margin: 0 auto;
 }
   
-.HSPH {
-  width: 14%;
-  position: relative;
-  /*float: left;*/
-  display: block;
-  left: 30%;
-  top: 10%;
+.Tabla1 {
+  margin: 2%;
+  margin-left: 20%;
+  height: 15%;
+  width: 15%;
+  float: left;
 }
+.Tabla2 {
+  margin: 1%;
+  margin-left: 25%;
+  height: 15%;
+  width: 15%;
+  float: left;
+  
+}
+
 
 

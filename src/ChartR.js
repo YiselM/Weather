@@ -6,7 +6,7 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 var dataPoints =[];
 CanvasJS.addColorSet("Amarillito",
 [//colorSet Array
-"#FFB300",              
+"#FFDB12",              
 ]);
 
 class ChartR extends Component {

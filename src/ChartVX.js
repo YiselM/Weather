@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CanvasJSReact from './canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-
 var dataPoints = [];
 class ChartVX extends Component {
     render() {
@@ -39,27 +38,27 @@ class ChartVX extends Component {
     }
 
     componentDidMount() {
-		var chart = this.chart;
+		//var chart = this.chart;
 		var updateChart = function () {
-        return Promise.resolve()
-        .then(function () {
-            return localStorage.getItem('PV');
-        })
+            fetch('http://localhost:3001/EnergiaBloqueC')
+            .then(function(response) {
+                return response.json();	
+            })
 		.then(function(data) {
-            var hoy = new Date();
-            hoy = hoy.getDay()
+            //  var hoy = new Date();
+            // hoy = hoy.getDay()
             data = JSON.parse(data)
-            //console.log(data);
-            var dias=['D', 'L', 'M', 'Mier', 'J', 'V', 'S'];
-            for(var i = 0; i<= hoy; i++){
-                dataPoints.push({
-                    label: dias[i],  
-                    y: data[i]
-                }); 
-            }
-			chart.render();
-			chart.options.data[0].dataPoints = dataPoints;
-            dataPoints = [];
+            console.log(data);
+            // var dias=['D', 'L', 'M', 'Mier', 'J', 'V', 'S'];
+            // for(var i = 0; i<= hoy; i++){
+            //     dataPoints.push({
+            //         label: dias[i],  
+            //         y: data[i]
+            //     }); 
+            // }
+			// chart.render();
+			// chart.options.data[0].dataPoints = dataPoints;
+            // dataPoints = []; 
         })
         .catch(function(error) {
 			

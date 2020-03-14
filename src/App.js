@@ -12,23 +12,23 @@ class App extends Component {
     return (
       <div className="principal">
         <nav className="navbar navbar-dark bg-dark">
-          <a className="navbar-brand" href="index.html">Boletines Diarios UniGRID 🌤 </a>
+          <a className="navbar-brand" href="index.html">🌤 Boletines Diarios UniGRID</a>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
-              <li className="nav-item active">
-                <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
-              </li>
+              
 
             </ul>
           </div>
         </nav>
         <div className="Centrado">
-            <div className="HSPH">
+          
+            <div className="Tabla1">
             <Table />
             </div>
-          <div className="HSPH">
+          <div className="Tabla2">
             <HPS />
           </div>
+          
           <div className="Cuadro">
             <ChartR />
           </div>
