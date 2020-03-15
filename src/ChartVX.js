@@ -38,34 +38,34 @@ class ChartVX extends Component {
     }
 
     componentDidMount() {
-		//var chart = this.chart;
+		var chart = this.chart;
 		var updateChart = function () {
-            fetch('http://localhost:3001/EnergiaBloqueC')
+            fetch('http://localhost:3001/PotenciaEmuladorUniGRID')
             .then(function(response) {
                 return response.json();	
             })
 		.then(function(data) {
-            //  var hoy = new Date();
-            // hoy = hoy.getDay()
-            data = JSON.parse(data)
+            var hoy = new Date();
+            hoy = hoy.getDay()
+            //data = JSON.parse(data)
             console.log(data);
-            // var dias=['D', 'L', 'M', 'Mier', 'J', 'V', 'S'];
-            // for(var i = 0; i<= hoy; i++){
-            //     dataPoints.push({
-            //         label: dias[i],  
-            //         y: data[i]
-            //     }); 
-            // }
-			// chart.render();
-			// chart.options.data[0].dataPoints = dataPoints;
-            // dataPoints = []; 
+            var dias=['D', 'L', 'M', 'Mier', 'J', 'V', 'S'];
+            for(var i = 0; i<= hoy; i++){
+                dataPoints.push({
+                    label: dias[i],  
+                    y: data[i]
+                }); 
+            }
+			chart.render();
+			chart.options.data[0].dataPoints = dataPoints;
+            dataPoints = []; 
         })
         .catch(function(error) {
 			
 		  });
 	};
     setTimeout(function(){updateChart()}, 1000);
-    setInterval(function(){updateChart()}, 900000);
+    setInterval(function(){updateChart()}, 900000); 
 	}
 }
 

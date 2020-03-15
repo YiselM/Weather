@@ -9,8 +9,7 @@ class HPS extends Component {
   render() {    
     return (
         
-    <div>  
-     <p className="App-intro">{this.state.apiResponse}</p>       
+    <div>        
         <button type="button" className="btn btn-warning">
          Horas sol pico <span className="badge badge-light" id = "demo"></span >
         </button>
@@ -36,21 +35,9 @@ class HPS extends Component {
     </div>
     );
 }
- constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-}
-
-callAPI() {
-    fetch("http://localhost:9000/testAPI")
-        .then(res => res.text())
-        .then(res => this.setState({ apiResponse: res }));
-}
-
 componentDidMount() {
-    this.callAPI();
     var updateData = function () {
-    fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=m&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+    fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=m&apiKey=8c1a32a8e11c4d819a32a8e11ccd81e7')
     .then(function(response) {
         return response.json();
     })

@@ -45,7 +45,7 @@ class ChartV extends Component {
 	componentDidMount() {
 		var chart = this.chart;
 		var updateChart = function () {
-		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=m&apiKey=f040e0b1ecb0410980e0b1ecb04109b0')
+		fetch('https://api.weather.com/v2/pws/observations/all/1day?stationId=IATLNTIC4&format=json&units=m&apiKey=8c1a32a8e11c4d819a32a8e11ccd81e7')
 		.then(function(response) {
 			return response.json();	
 		})
